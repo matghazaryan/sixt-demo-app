@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="DemoApp.app" target="11" />
+      <module name="DemoApp.car-api" target="11" />
+      <module name="DemoApp.feature.car" target="11" />
+      <module name="DemoApp.utils" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

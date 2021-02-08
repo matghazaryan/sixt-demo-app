@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlinx-serialization'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion configs.compileSdkVersion
+    buildToolsVersion configs.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion configs.minSdkVersion
+        targetSdkVersion configs.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    /* Project */
+    implementation project(path: ':domain')
+    implementation project(path: ':utils')
+
+    /* Kotlin */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin_coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:${versions.kotlin_serialization}"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.kotlin_serialization}"
+
+    /* Logger */
+    implementation "com.orhanobut:logger:${versions.orhanobut_logger}"
+
+    /* Hilt */
+    implementation "com.google.dagger:hilt-android:${versions.hilt}"
+    kapt "com.google.dagger:hilt-android-compiler:${versions.hilt}"
+
+    /* Retrofit */
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${versions.retrofit_kotlinx_serialization_converter}"
+
+    /* OkHttp logger interceptor */
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_logging_interceptor}"
+}
