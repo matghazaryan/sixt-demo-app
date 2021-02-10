@@ -4,10 +4,15 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = configs.javaVersion
+    targetCompatibility = configs.javaVersion
 }
 
 dependencies {
+    /* Kotlin */
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin_coroutines}"
+
+    /* Logger */
+    implementation "com.orhanobut:logger:${versions.orhanobut_logger}"
 }

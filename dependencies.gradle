@@ -25,4 +25,5 @@ ext.versions = [
         'hilt'                                    : '2.31-alpha',
         'androidx_hilt'                           : '1.0.0-alpha03',
         'android_room'                            : '2.2.6',
+        'googleMap'                               : '17.0.0'
 ]

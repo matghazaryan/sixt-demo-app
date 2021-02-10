@@ -40,6 +40,14 @@ android {
 
 dependencies {
 
+    /* Project */
+    implementation project(path: ':domain')
+    implementation project(path: ':car-api')
+    implementation project(path: ':utils')
+
+    /* Project Features */
+    implementation project(path: ':feature:car')
+
     /* Kotlin */
     implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlin_coroutines}"
